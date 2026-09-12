@@ -55,3 +55,8 @@ def test_uploads_pdf_and_returns_pages():
     assert data["total_pages"] == 1
     assert data["pages"][0]["page_number"] == 1
     assert "Hello API" in data["pages"][0]["text"]
+
+    assert data["total_chunks"] == 1
+    assert data["chunks"][0]["chunk_index"] == 0
+    assert data["chunks"][0]["page_numbers"] == [1]
+    assert "Hello API" in data["chunks"][0]["text"] 

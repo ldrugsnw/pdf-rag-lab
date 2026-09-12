@@ -1,7 +1,7 @@
 import pytest
 import fitz
 
-from parser import extract_pages, PdfParsingError
+from parser import extract_pages, PdfParsingError, normalize_text
 
 def create_pdf_bytes(text: str) -> bytes:
     document = fitz.open()
@@ -46,3 +46,10 @@ def test_blank_pdf_raises_error():
 
     with pytest.raises(PdfParsingError):
         extract_pages(pdf_bytes)
+
+def test_normalize_text_removes_empty_lines_and_spaces():
+    text = "   첫 번째 줄 \n\n 두 번째 줄 \n"
+
+    normalized = normalize_text(text)
+
+    assert normalized == "첫 번째 줄\n두 번째 줄"

@@ -20,7 +20,8 @@ def extract_pages(pdf_bytes: bytes): # Parser
     pages = []
 
     for index, page in enumerate(doc):
-        text = page.get_text().strip()
+        raw_text = page.get_text("text", sort = True)
+        text = normalize_text(raw_text)
 
         pages.append({
             "page_number": index + 1,
@@ -31,3 +32,13 @@ def extract_pages(pdf_bytes: bytes): # Parser
         raise PdfParsingError("PDF에서 텍스트를 찾을 수 없습니다.")
     
     return pages
+
+
+def normalize_text(text: str) -> str:
+    lines = [
+        line.strip()
+        for line in text.splitlines()
+        if line.strip()
+    ]
+
+    return "\n".join(lines)

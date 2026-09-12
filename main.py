@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 
+from chunker import chunk_pages
 from parser import extract_pages, PdfParsingError
 
 app = FastAPI()
@@ -15,15 +16,18 @@ async def upload_pdf(file: UploadFile = File(...)):
     pdf_bytes = await file.read()
     try:
         pages = extract_pages(pdf_bytes)
-
     except PdfParsingError as error:
         raise HTTPException(
             status_code = 400,
             detail=str(error),
         ) from error
 
+    chunks = chunk_pages(pages)
+    
     return {
         "filename" : file.filename,
         "total_pages" : len(pages),
+         "total_chunks": len(chunks),
         "pages": pages,
+        "chunks": chunks,
     }

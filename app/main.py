@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 
-from chunker import chunk_pages
-from parser import extract_pages, PdfParsingError
+from app.chunker import chunk_pages
+from app.parser import extract_pages, PdfParsingError
 
 app = FastAPI()
 

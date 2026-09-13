@@ -2,12 +2,12 @@ import json
 
 from pathlib import Path
 
-from chunker import chunk_pages
-from parser import extract_pages
-from embedder import embed_chunks, embed_texts
-from retrieval import search_chunks_by_embedding
+from app.chunker import chunk_pages
+from app.parser import extract_pages
+from app.embedder import embed_chunks, embed_texts
+from app.retrieval import search_chunks_by_embedding
 
-from evaluation import (
+from app.evaluation import (
     calculate_hit_at_k,
     calculate_reciprocal_rank,
 )

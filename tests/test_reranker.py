@@ -1,6 +1,6 @@
 import pytest
 
-from reranker import rerank_results
+from app.reranker import rerank_results
 
 
 def test_rerank_results_orders_candidates_by_rerank_score():

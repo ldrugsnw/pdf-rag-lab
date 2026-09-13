@@ -1,7 +1,7 @@
 import pytest
 import fitz
 
-from parser import extract_pages, PdfParsingError, normalize_text
+from app.parser import extract_pages, PdfParsingError, normalize_text
 
 def create_pdf_bytes(text: str) -> bytes:
     document = fitz.open()

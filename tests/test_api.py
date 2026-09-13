@@ -1,12 +1,25 @@
-from fastapi.testclient import TestClient
+import asyncio
+
 import fitz
+import httpx
 
-from main import app
+from app.main import app
 
-client = TestClient(app)
+
+def post_to_app(path: str, **kwargs) -> httpx.Response:
+    async def send_request() -> httpx.Response:
+        transport = httpx.ASGITransport(app=app)
+
+        async with httpx.AsyncClient(
+            transport=transport,
+            base_url="http://testserver",
+        ) as client:
+            return await client.post(path, **kwargs)
+
+    return asyncio.run(send_request())
 
 def test_reject_non_pdf_file():
-    response = client.post(
+    response = post_to_app(
         "/papers",
         files = {
             "file": (
@@ -36,7 +49,7 @@ def create_pdf_bytes(text: str) -> bytes:
 def test_uploads_pdf_and_returns_pages():
     pdf_bytes = create_pdf_bytes("Hello API")
 
-    response = client.post(
+    response = post_to_app(
         "/papers",
         files={
             "file": (
@@ -59,4 +72,4 @@ def test_uploads_pdf_and_returns_pages():
     assert data["total_chunks"] == 1
     assert data["chunks"][0]["chunk_index"] == 0
     assert data["chunks"][0]["page_numbers"] == [1]
-    assert "Hello API" in data["chunks"][0]["text"] 
+    assert "Hello API" in data["chunks"][0]["text"]

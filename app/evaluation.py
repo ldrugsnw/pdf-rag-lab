@@ -27,4 +27,3 @@ def calculate_hit_at_k(
 
     return 0.0
 
-

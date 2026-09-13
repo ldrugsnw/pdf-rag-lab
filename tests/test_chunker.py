@@ -1,6 +1,6 @@
 import pytest
 
-from chunker import (
+from app.chunker import (
     chunk_pages,
     chunk_text,
     combine_pages,

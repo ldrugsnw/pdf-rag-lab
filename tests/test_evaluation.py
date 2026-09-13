@@ -1,6 +1,6 @@
 import pytest
 
-from evaluation import calculate_reciprocal_rank, calculate_hit_at_k
+from app.evaluation import calculate_reciprocal_rank, calculate_hit_at_k
 
 
 def test_calculate_reciprocal_rank_uses_first_relevant_result():

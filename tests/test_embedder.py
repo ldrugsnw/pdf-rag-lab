@@ -1,4 +1,4 @@
-import embedder
+from app import embedder
 
 
 def test_embed_chunks_adds_embeddings_without_changing_original(monkeypatch):

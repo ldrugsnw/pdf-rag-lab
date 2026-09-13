@@ -5,3 +5,8 @@ __pycache__/
 
 # Virtual environment
 .venv/
+
+# cache
+cache/
+
+samples/*.pdf

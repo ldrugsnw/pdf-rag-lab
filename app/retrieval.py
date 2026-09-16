@@ -56,3 +56,36 @@ def cosine_similarity(vector_a: list[float], vector_b: list[float]) -> float:
         raise ValueError("vectors must not be zero vectors")
 
     return dot_product / (norm_a * norm_b)
+
+def search_chunks_by_embedding(
+    query_embedding: list[float],
+    chunks: list[dict],
+    top_k: int = 3,
+) -> list[dict]:
+    
+    if top_k <= 0:
+        raise ValueError("top_k must be greater than 0")
+
+    results = []
+
+    for chunk in chunks:
+        score = cosine_similarity(
+            query_embedding,
+            chunk["embedding"],
+        )
+
+        results.append(
+            {
+            "score": score,
+            "chunk_index": chunk["chunk_index"],
+            "page_numbers": chunk["page_numbers"],
+            "text": chunk["text"],
+            }
+        )
+
+    results.sort(
+        key=lambda result: result["score"],
+        reverse=True,
+    )
+
+    return results[:top_k]

@@ -5,3 +5,12 @@ __pycache__/
 
 # Virtual environment
 .venv/
+.venv-1/
+
+# Local secrets
+.env
+
+# cache
+cache/
+
+samples/*.pdf

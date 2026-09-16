@@ -1,5 +1,9 @@
 import pytest
-from retrieval import search_chunks, cosine_similarity
+from app.retrieval import (
+    cosine_similarity,
+    search_chunks,
+    search_chunks_by_embedding,
+)
 
 def test_search_chunks_returns_highest_scoring_chunk():
     chunks = [
@@ -107,3 +111,32 @@ def test_cosine_similarity_raises_valueError_for_zero_vector():
             vector_a,
             vector_b,
         )
+
+def test_search_chunks_by_embedding_returns_most_similar_chunk():
+    query_embedding = [1.0, 0.0]
+
+    chunks = [
+        {
+            "chunk_index": 1,
+            "page_numbers": [2],
+            "text": "수직 방향",
+            "embedding": [0.0, 1.0],
+        },
+        {
+            "chunk_index": 0,
+            "page_numbers": [1],
+            "text": "같은 방향",
+            "embedding": [1.0, 0.0],
+        },
+    ]
+
+    results = search_chunks_by_embedding(
+        query_embedding=query_embedding,
+        chunks=chunks,
+        top_k=1,
+    )
+
+    assert len(results) == 1
+    assert results[0]["chunk_index"] == 0
+    assert results[0]["score"] == pytest.approx(1.0)
+    assert results[0]["page_numbers"] == [1]

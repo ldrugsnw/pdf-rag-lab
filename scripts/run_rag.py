@@ -3,9 +3,12 @@ from pathlib import Path
 
 from app.embedder import embed_texts
 from app.retrieval import search_chunks_by_embedding
-# from app.reranker import rerank_chunks
+from app.reranker import (
+    RerankingError,
+    calculate_rerank_scores_with_retry,
+    rerank_results,
+)
 from app.generator import generate_answer
-from app.reranker import rerank_results
 
 
 CACHE_PATH = Path("cache/rag_paper_embeddings.json")
@@ -14,7 +17,8 @@ embedded_chunks = json.loads(
     CACHE_PATH.read_text(encoding="utf-8")
 )
 
-question = "Who was the first person to walk on the Moon?"
+question = "Which model does RAG use to retrieve passages from its document index?"
+# question = "Who was the first person to walk on the Moon?"
 
 # 1. Embed question
 query_embedding = embed_texts([question])[0]
@@ -27,39 +31,56 @@ retrieved_chunks = search_chunks_by_embedding(
 )
 
 # 3. Rerank candidates
-# 3. Fake reranker
+try:
+    rerank_scores = calculate_rerank_scores_with_retry(
+        question=question,
+        candidates=retrieved_chunks,
+        max_retries=2,
+    )
 
-fake_scores = [
+    selected_chunks = rerank_results(
+        candidates=retrieved_chunks,
+        rerank_scores=rerank_scores,
+        top_k=3,
+    )
 
-    1.0 - (i * 0.05)
+except RerankingError:
+    print(
+        "Reranking failed. "
+        "Falling back to retriever results."
+    )
 
-    for i in range(len(retrieved_chunks))
+    selected_chunks = retrieved_chunks[:3]
 
-]
+print("임시 로그\n")
 
-reranked_chunks = rerank_results(
+print("\n--- Retriever Top 10 ---")
+for rank, chunk in enumerate(retrieved_chunks, start=1):
+    marker = " <-- relevant" if chunk["chunk_index"] == 13 else ""
+    print(
+        f'{rank}. chunk={chunk["chunk_index"]}, '
+        f'score={chunk["score"]:.4f}{marker}'
+    )
 
-    candidates=retrieved_chunks,
-
-    rerank_scores=fake_scores,
-
-    top_k=3,
-)
-
-# 4. Select final context
-context_chunks = reranked_chunks[:3]
-
-# 5. Generate answer
+print("\n--- Selected After Reranking ---")
+for rank, chunk in enumerate(selected_chunks, start=1):
+    marker = " <-- relevant" if chunk["chunk_index"] == 13 else ""
+    print(
+        f'{rank}. chunk={chunk["chunk_index"]}, '
+        f'rerank={chunk.get("rerank_score", "fallback")}'
+        f'{marker}'
+    )
+# 4. Generate answer
 answer = generate_answer(
     question=question,
-    chunks=context_chunks,
+    chunks=selected_chunks,
 )
 
 print("\n--- Question ---")
 print(question)
 
-print("\n--- Retrieved Context ---")
-for chunk in context_chunks:
+print("\n--- Final Context ---")
+for chunk in selected_chunks:
     print(
         f'chunk={chunk["chunk_index"]}, '
         f'pages={chunk["page_numbers"]}'

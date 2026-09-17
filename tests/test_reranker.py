@@ -22,7 +22,11 @@ def test_rerank_results_orders_candidates_by_rerank_score():
         },
     ]
 
-    rerank_scores = [0.4, 0.1, 0.9]
+    rerank_scores = [
+        {"chunk_index": 27, "score": 0.2},
+        {"chunk_index": 10, "score": 0.4},
+        {"chunk_index": 13, "score": 0.9},
+    ]
 
     results = rerank_results(
         candidates=candidates,
@@ -31,10 +35,13 @@ def test_rerank_results_orders_candidates_by_rerank_score():
     )
 
     assert len(results) == 2
+    
     assert results[0]["chunk_index"] == 13
     assert results[0]["rerank_score"] == 0.9
+
     assert results[1]["chunk_index"] == 10
     assert results[1]["rerank_score"] == 0.4
+
     assert results[0]["score"] == 0.5237 
     # 기존의 score가 날라가는 않았는가?
 

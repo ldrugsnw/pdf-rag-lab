@@ -1,0 +1,105 @@
+[
+  {
+    "id": "comparison_001",
+    "category": "comparison",
+    "question": "What is the difference between RAG-Sequence and RAG-Token?",
+    "relevant_chunk_indices": [10, 11]
+  },
+  {
+    "id": "direct_fact_001",
+    "category": "direct_fact",
+    "question": "Which model does RAG use to retrieve passages from its document index?",
+    "relevant_chunk_indices": [13],
+    "query_style": "paraphrase"
+  },
+  {
+    "id": "explanation_001",
+    "category": "explanation",
+    "question": "Why do the authors keep the document encoder fixed during training?",
+    "relevant_chunk_indices": [15]
+  },
+{
+  "id": "direct_fact_002",
+  "category": "direct_fact",
+  "question": "Which Wikipedia dump did the authors use as RAG's non-parametric knowledge source?",
+  "relevant_chunk_indices": [17],
+  "query_style": "lexical_overlap"
+},
+{
+"id": "direct_fact_003",
+"category": "direct_fact",
+"question": "Which metric did the authors use to evaluate Jeopardy question generation?",
+"relevant_chunk_indices": [21, 22, 28],
+"query_style": "paraphrase"
+},
+{
+"id": "explanation_003",
+"category": "explanation",
+"question": "Why is FEVER a useful task for evaluating RAG beyond text generation?",
+"relevant_chunk_indices": [23],
+"query_style": "paraphrase"
+},
+{
+"id": "explanation_004",
+"category": "explanation",
+"question": "Why can generative QA answer questions that standard extractive approaches may fail to answer?",
+"relevant_chunk_indices": [25, 27],
+"query_style": "paraphrase"
+},
+{
+  "id": "explanation_005",
+  "category": "explanation",
+  "question": "Why might token-level retrieval be especially suited to Jeopardy question generation?",
+  "relevant_chunk_indices": [29],
+  "query_style": "paraphrase"
+},
+{
+  "id": "direct_fact_004",
+  "category": "direct_fact",
+  "question": "How often did RAG's ten highest-ranked FEVER documents include an article annotated as gold evidence?",
+  "relevant_chunk_indices": [34],
+  "query_style": "paraphrase"
+},
+{
+  "id": "explanation_006",
+  "category": "explanation",
+  "question": "What conclusion did the experiment that froze the retriever during training support?",
+  "relevant_chunk_indices": [35],
+  "query_style": "paraphrase"
+},
+{
+  "id": "explanation_007",
+  "category": "explanation",
+  "question": "Why might BM25 perform particularly well on the FEVER task?",
+  "relevant_chunk_indices": [36],
+  "query_style": "paraphrase"
+},
+{
+  "id": "direct_fact_005",
+  "category": "direct_fact",
+  "question": "How accurate was RAG when the Wikipedia index year did not match the target world leaders?",
+  "relevant_chunk_indices": [38],
+  "query_style": "paraphrase"
+},
+{
+  "id": "comparison_003",
+  "category": "comparison",
+  "question": "How does retrieving more documents affect RAG-Sequence and RAG-Token differently on open-domain question answering?",
+  "relevant_chunk_indices": [39],
+  "query_style": "paraphrase"
+},
+{
+  "id": "explanation_008",
+  "category": "explanation",
+  "question": "How can RAG update its world knowledge at test time without additional model training?",
+  "relevant_chunk_indices": [9, 36, 38, 39],
+  "query_style": "paraphrase"
+},
+{
+  "id": "explanation_009",
+  "category": "explanation",
+  "question": "What broader goal does RAG pursue by adding learned retrieval to a pretrained generative language model?",
+  "relevant_chunk_indices": [1, 6, 45],
+  "query_style": "paraphrase"
+}
+]

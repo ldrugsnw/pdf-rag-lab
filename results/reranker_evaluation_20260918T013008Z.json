@@ -1,0 +1,2316 @@
+{
+  "generated_at": "2026-09-18T01:30:08.787455+00:00",
+  "number_of_cases": 15,
+  "summary": {
+    "retriever_mean_hit_at_3": 0.8,
+    "reranker_mean_hit_at_3": 1.0,
+    "retriever_mrr": 0.6794444444444444,
+    "reranker_mrr": 1.0
+  },
+  "cases": [
+    {
+      "id": "comparison_001",
+      "category": "comparison",
+      "query_style": null,
+      "question": "What is the difference between RAG-Sequence and RAG-Token?",
+      "relevant_chunk_indices": [
+        10,
+        11
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 11,
+            "retrieval_score": 0.5976543264655457,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 35,
+            "retrieval_score": 0.5639797938172821,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 10,
+            "retrieval_score": 0.552835368961136,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_index": 12,
+            "retrieval_score": 0.5492650995103654,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 29,
+            "retrieval_score": 0.5372256888298618,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 13,
+            "retrieval_score": 0.5269506400951416,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 27,
+            "retrieval_score": 0.5078225378899465,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 32,
+            "retrieval_score": 0.49100050981590054,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 41,
+            "retrieval_score": 0.4891002210931873,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 39,
+            "retrieval_score": 0.4857838686188798,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 11,
+            "retrieval_score": 0.5976543264655457,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 10,
+            "retrieval_score": 0.552835368961136,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 12,
+            "retrieval_score": 0.5492650995103654,
+            "rerank_score": 0.7,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 29,
+            "retrieval_score": 0.5372256888298618,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 32,
+            "retrieval_score": 0.49100050981590054,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 39,
+            "retrieval_score": 0.4857838686188798,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 27,
+            "retrieval_score": 0.5078225378899465,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 35,
+            "retrieval_score": 0.5639797938172821,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 41,
+            "retrieval_score": 0.4891002210931873,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 13,
+            "retrieval_score": 0.5269506400951416,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_fact_001",
+      "category": "direct_fact",
+      "query_style": "paraphrase",
+      "question": "Which model does RAG use to retrieve passages from its document index?",
+      "relevant_chunk_indices": [
+        13
+      ],
+      "retriever": {
+        "first_relevant_rank": 8,
+        "hit_at_3": 0.0,
+        "reciprocal_rank": 0.125,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 10,
+            "retrieval_score": 0.6077313618982708,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 27,
+            "retrieval_score": 0.6028839718634748,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 39,
+            "retrieval_score": 0.5593214276231131,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 29,
+            "retrieval_score": 0.5411646307037127,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 9,
+            "retrieval_score": 0.5330880116289273,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 18,
+            "retrieval_score": 0.5312548798038387,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 83,
+            "retrieval_score": 0.5290669624485759,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 13,
+            "retrieval_score": 0.5236434096918104,
+            "is_relevant": true
+          },
+          {
+            "rank": 9,
+            "chunk_index": 51,
+            "retrieval_score": 0.5189803492214294,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 48,
+            "retrieval_score": 0.5164265971646335,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 13,
+            "retrieval_score": 0.5236434096918104,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 27,
+            "retrieval_score": 0.6028839718634748,
+            "rerank_score": 0.9,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 9,
+            "retrieval_score": 0.5330880116289273,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 18,
+            "retrieval_score": 0.5312548798038387,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 10,
+            "retrieval_score": 0.6077313618982708,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 39,
+            "retrieval_score": 0.5593214276231131,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 83,
+            "retrieval_score": 0.5290669624485759,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 29,
+            "retrieval_score": 0.5411646307037127,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 48,
+            "retrieval_score": 0.5164265971646335,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 51,
+            "retrieval_score": 0.5189803492214294,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_001",
+      "category": "explanation",
+      "query_style": null,
+      "question": "Why do the authors keep the document encoder fixed during training?",
+      "relevant_chunk_indices": [
+        15
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 15,
+            "retrieval_score": 0.4977566112666161,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 14,
+            "retrieval_score": 0.4728566824062012,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 88,
+            "retrieval_score": 0.4235822537945345,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 82,
+            "retrieval_score": 0.4150504462177256,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 46,
+            "retrieval_score": 0.40871813073549895,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 47,
+            "retrieval_score": 0.4056827972986927,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 72,
+            "retrieval_score": 0.39862927631015055,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 45,
+            "retrieval_score": 0.3874163248736359,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 91,
+            "retrieval_score": 0.3825731445735927,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 30,
+            "retrieval_score": 0.3820785449389307,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 15,
+            "retrieval_score": 0.4977566112666161,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 14,
+            "retrieval_score": 0.4728566824062012,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 88,
+            "retrieval_score": 0.4235822537945345,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 82,
+            "retrieval_score": 0.4150504462177256,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 46,
+            "retrieval_score": 0.40871813073549895,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 47,
+            "retrieval_score": 0.4056827972986927,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 72,
+            "retrieval_score": 0.39862927631015055,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 45,
+            "retrieval_score": 0.3874163248736359,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 91,
+            "retrieval_score": 0.3825731445735927,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 30,
+            "retrieval_score": 0.3820785449389307,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_fact_002",
+      "category": "direct_fact",
+      "query_style": "lexical_overlap",
+      "question": "Which Wikipedia dump did the authors use as RAG's non-parametric knowledge source?",
+      "relevant_chunk_indices": [
+        17
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 17,
+            "retrieval_score": 0.5956051806297245,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 50,
+            "retrieval_score": 0.5408399837413673,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 49,
+            "retrieval_score": 0.5284875906231631,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 82,
+            "retrieval_score": 0.515861608098205,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 87,
+            "retrieval_score": 0.5130099825834794,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 19,
+            "retrieval_score": 0.5076608607298233,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 1,
+            "retrieval_score": 0.49131656572588495,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 66,
+            "retrieval_score": 0.49009135514211366,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 51,
+            "retrieval_score": 0.4756505334208746,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 55,
+            "retrieval_score": 0.47348919017029306,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 17,
+            "retrieval_score": 0.5956051806297245,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 50,
+            "retrieval_score": 0.5408399837413673,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 49,
+            "retrieval_score": 0.5284875906231631,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 82,
+            "retrieval_score": 0.515861608098205,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 87,
+            "retrieval_score": 0.5130099825834794,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 19,
+            "retrieval_score": 0.5076608607298233,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 1,
+            "retrieval_score": 0.49131656572588495,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 66,
+            "retrieval_score": 0.49009135514211366,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 51,
+            "retrieval_score": 0.4756505334208746,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 55,
+            "retrieval_score": 0.47348919017029306,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_fact_003",
+      "category": "direct_fact",
+      "query_style": "paraphrase",
+      "question": "Which metric did the authors use to evaluate Jeopardy question generation?",
+      "relevant_chunk_indices": [
+        21,
+        22,
+        28
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 21,
+            "retrieval_score": 0.7207222673761359,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 20,
+            "retrieval_score": 0.6273582256614826,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 37,
+            "retrieval_score": 0.6258003630667326,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 5,
+            "retrieval_score": 0.6036915815610268,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 80,
+            "retrieval_score": 0.5830844984784516,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 36,
+            "retrieval_score": 0.5830563475872376,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 28,
+            "retrieval_score": 0.5829833291833593,
+            "is_relevant": true
+          },
+          {
+            "rank": 8,
+            "chunk_index": 68,
+            "retrieval_score": 0.5742061665911103,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 81,
+            "retrieval_score": 0.5626559405464213,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 8,
+            "retrieval_score": 0.5569939979693697,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 21,
+            "retrieval_score": 0.7207222673761359,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 20,
+            "retrieval_score": 0.6273582256614826,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 28,
+            "retrieval_score": 0.5829833291833593,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_index": 37,
+            "retrieval_score": 0.6258003630667326,
+            "rerank_score": 0.5,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 36,
+            "retrieval_score": 0.5830563475872376,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 8,
+            "retrieval_score": 0.5569939979693697,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 81,
+            "retrieval_score": 0.5626559405464213,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 5,
+            "retrieval_score": 0.6036915815610268,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 80,
+            "retrieval_score": 0.5830844984784516,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 68,
+            "retrieval_score": 0.5742061665911103,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_003",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "Why is FEVER a useful task for evaluating RAG beyond text generation?",
+      "relevant_chunk_indices": [
+        23
+      ],
+      "retriever": {
+        "first_relevant_rank": 5,
+        "hit_at_3": 0.0,
+        "reciprocal_rank": 0.2,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 36,
+            "retrieval_score": 0.614997895526991,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 24,
+            "retrieval_score": 0.5875477133408025,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 35,
+            "retrieval_score": 0.5868827913478197,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 9,
+            "retrieval_score": 0.578383073544933,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 23,
+            "retrieval_score": 0.5675764605539159,
+            "is_relevant": true
+          },
+          {
+            "rank": 6,
+            "chunk_index": 29,
+            "retrieval_score": 0.5502797579576346,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 87,
+            "retrieval_score": 0.5499384102491646,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 37,
+            "retrieval_score": 0.5346516703216749,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 34,
+            "retrieval_score": 0.525514576985239,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 86,
+            "retrieval_score": 0.5234078849651052,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 23,
+            "retrieval_score": 0.5675764605539159,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 37,
+            "retrieval_score": 0.5346516703216749,
+            "rerank_score": 0.6,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 34,
+            "retrieval_score": 0.525514576985239,
+            "rerank_score": 0.5,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 35,
+            "retrieval_score": 0.5868827913478197,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 9,
+            "retrieval_score": 0.578383073544933,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 87,
+            "retrieval_score": 0.5499384102491646,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 86,
+            "retrieval_score": 0.5234078849651052,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 24,
+            "retrieval_score": 0.5875477133408025,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 29,
+            "retrieval_score": 0.5502797579576346,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 36,
+            "retrieval_score": 0.614997895526991,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_004",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "Why can generative QA answer questions that standard extractive approaches may fail to answer?",
+      "relevant_chunk_indices": [
+        25,
+        27
+      ],
+      "retriever": {
+        "first_relevant_rank": 2,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 0.5,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 21,
+            "retrieval_score": 0.6401383537875809,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 25,
+            "retrieval_score": 0.6339030753450503,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 19,
+            "retrieval_score": 0.6168937157883922,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 20,
+            "retrieval_score": 0.588023745911954,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 84,
+            "retrieval_score": 0.5841744091053427,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 8,
+            "retrieval_score": 0.5625812003594244,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 9,
+            "retrieval_score": 0.5461368594797787,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 83,
+            "retrieval_score": 0.543434110790662,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 27,
+            "retrieval_score": 0.5429951736382634,
+            "is_relevant": true
+          },
+          {
+            "rank": 10,
+            "chunk_index": 28,
+            "retrieval_score": 0.5384984410014294,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 25,
+            "retrieval_score": 0.6339030753450503,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 19,
+            "retrieval_score": 0.6168937157883922,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 20,
+            "retrieval_score": 0.588023745911954,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 9,
+            "retrieval_score": 0.5461368594797787,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 27,
+            "retrieval_score": 0.5429951736382634,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 6,
+            "chunk_index": 8,
+            "retrieval_score": 0.5625812003594244,
+            "rerank_score": 0.95,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 28,
+            "retrieval_score": 0.5384984410014294,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 21,
+            "retrieval_score": 0.6401383537875809,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 84,
+            "retrieval_score": 0.5841744091053427,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 83,
+            "retrieval_score": 0.543434110790662,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_005",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "Why might token-level retrieval be especially suited to Jeopardy question generation?",
+      "relevant_chunk_indices": [
+        29
+      ],
+      "retriever": {
+        "first_relevant_rank": 5,
+        "hit_at_3": 0.0,
+        "reciprocal_rank": 0.2,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 21,
+            "retrieval_score": 0.6117273609191815,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 28,
+            "retrieval_score": 0.5631521669408264,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 5,
+            "retrieval_score": 0.5546670352845722,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 37,
+            "retrieval_score": 0.5545430220364255,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 29,
+            "retrieval_score": 0.5462052397659556,
+            "is_relevant": true
+          },
+          {
+            "rank": 6,
+            "chunk_index": 36,
+            "retrieval_score": 0.5334507062756894,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 20,
+            "retrieval_score": 0.5320703283869581,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 8,
+            "retrieval_score": 0.5191461007844228,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 13,
+            "retrieval_score": 0.518929397196924,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 31,
+            "retrieval_score": 0.5109383085279688,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 29,
+            "retrieval_score": 0.5462052397659556,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 28,
+            "retrieval_score": 0.5631521669408264,
+            "rerank_score": 0.85,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 37,
+            "retrieval_score": 0.5545430220364255,
+            "rerank_score": 0.7,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 5,
+            "retrieval_score": 0.5546670352845722,
+            "rerank_score": 0.5,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 8,
+            "retrieval_score": 0.5191461007844228,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 21,
+            "retrieval_score": 0.6117273609191815,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 13,
+            "retrieval_score": 0.518929397196924,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 20,
+            "retrieval_score": 0.5320703283869581,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 31,
+            "retrieval_score": 0.5109383085279688,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 36,
+            "retrieval_score": 0.5334507062756894,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_fact_004",
+      "category": "direct_fact",
+      "query_style": "paraphrase",
+      "question": "How often did RAG's ten highest-ranked FEVER documents include an article annotated as gold evidence?",
+      "relevant_chunk_indices": [
+        34
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 34,
+            "retrieval_score": 0.548280093823004,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 87,
+            "retrieval_score": 0.4849177323048344,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 23,
+            "retrieval_score": 0.4827592333307389,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 24,
+            "retrieval_score": 0.48045141075906733,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 36,
+            "retrieval_score": 0.4538323583338336,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 29,
+            "retrieval_score": 0.453748961340615,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 37,
+            "retrieval_score": 0.4468134465765902,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 35,
+            "retrieval_score": 0.4398309847893929,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 39,
+            "retrieval_score": 0.4376692335144238,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 27,
+            "retrieval_score": 0.432347910110943,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 34,
+            "retrieval_score": 0.548280093823004,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 87,
+            "retrieval_score": 0.4849177323048344,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 23,
+            "retrieval_score": 0.4827592333307389,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 24,
+            "retrieval_score": 0.48045141075906733,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 36,
+            "retrieval_score": 0.4538323583338336,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 29,
+            "retrieval_score": 0.453748961340615,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 37,
+            "retrieval_score": 0.4468134465765902,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 35,
+            "retrieval_score": 0.4398309847893929,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 39,
+            "retrieval_score": 0.4376692335144238,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 27,
+            "retrieval_score": 0.432347910110943,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_006",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "What conclusion did the experiment that froze the retriever during training support?",
+      "relevant_chunk_indices": [
+        35
+      ],
+      "retriever": {
+        "first_relevant_rank": 3,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 0.3333333333333333,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 91,
+            "retrieval_score": 0.3706236738185632,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 24,
+            "retrieval_score": 0.346703309715508,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 35,
+            "retrieval_score": 0.3396991126157885,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_index": 48,
+            "retrieval_score": 0.3349366352747894,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 36,
+            "retrieval_score": 0.32112448339892985,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 13,
+            "retrieval_score": 0.32106472663286695,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 46,
+            "retrieval_score": 0.319645326432804,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 25,
+            "retrieval_score": 0.31885694564069345,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 3,
+            "retrieval_score": 0.31665189427562895,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 14,
+            "retrieval_score": 0.3162972205672975,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 35,
+            "retrieval_score": 0.3396991126157885,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 91,
+            "retrieval_score": 0.3706236738185632,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 24,
+            "retrieval_score": 0.346703309715508,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 48,
+            "retrieval_score": 0.3349366352747894,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 36,
+            "retrieval_score": 0.32112448339892985,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 13,
+            "retrieval_score": 0.32106472663286695,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 46,
+            "retrieval_score": 0.319645326432804,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 25,
+            "retrieval_score": 0.31885694564069345,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 3,
+            "retrieval_score": 0.31665189427562895,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 14,
+            "retrieval_score": 0.3162972205672975,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_007",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "Why might BM25 perform particularly well on the FEVER task?",
+      "relevant_chunk_indices": [
+        36
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 36,
+            "retrieval_score": 0.5534894435139949,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 86,
+            "retrieval_score": 0.523408106824586,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 23,
+            "retrieval_score": 0.48861221048506576,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 24,
+            "retrieval_score": 0.46049419736505404,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 35,
+            "retrieval_score": 0.43783580733962235,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 37,
+            "retrieval_score": 0.43741478409749013,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 87,
+            "retrieval_score": 0.4368210431267994,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 30,
+            "retrieval_score": 0.4362060964123471,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 22,
+            "retrieval_score": 0.43077098691612226,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 43,
+            "retrieval_score": 0.42899269377241067,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 36,
+            "retrieval_score": 0.5534894435139949,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 35,
+            "retrieval_score": 0.43783580733962235,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 37,
+            "retrieval_score": 0.43741478409749013,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 86,
+            "retrieval_score": 0.523408106824586,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 23,
+            "retrieval_score": 0.48861221048506576,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 43,
+            "retrieval_score": 0.42899269377241067,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 24,
+            "retrieval_score": 0.46049419736505404,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 87,
+            "retrieval_score": 0.4368210431267994,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 30,
+            "retrieval_score": 0.4362060964123471,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 22,
+            "retrieval_score": 0.43077098691612226,
+            "rerank_score": 0.1,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_fact_005",
+      "category": "direct_fact",
+      "query_style": "paraphrase",
+      "question": "How accurate was RAG when the Wikipedia index year did not match the target world leaders?",
+      "relevant_chunk_indices": [
+        38
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 38,
+            "retrieval_score": 0.6717272358301876,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 39,
+            "retrieval_score": 0.47856777465319866,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 28,
+            "retrieval_score": 0.4334106886948363,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 50,
+            "retrieval_score": 0.428771577636799,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 82,
+            "retrieval_score": 0.4143877420350613,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 29,
+            "retrieval_score": 0.4141151901516583,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 36,
+            "retrieval_score": 0.40255118816975116,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 37,
+            "retrieval_score": 0.4010129867473479,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 17,
+            "retrieval_score": 0.38609759444262537,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 27,
+            "retrieval_score": 0.3852295032253425,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 38,
+            "retrieval_score": 0.6717272358301876,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 39,
+            "retrieval_score": 0.47856777465319866,
+            "rerank_score": 1.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 36,
+            "retrieval_score": 0.40255118816975116,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 28,
+            "retrieval_score": 0.4334106886948363,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 50,
+            "retrieval_score": 0.428771577636799,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 82,
+            "retrieval_score": 0.4143877420350613,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 29,
+            "retrieval_score": 0.4141151901516583,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 37,
+            "retrieval_score": 0.4010129867473479,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 17,
+            "retrieval_score": 0.38609759444262537,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 27,
+            "retrieval_score": 0.3852295032253425,
+            "rerank_score": 0.0,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "comparison_003",
+      "category": "comparison",
+      "query_style": "paraphrase",
+      "question": "How does retrieving more documents affect RAG-Sequence and RAG-Token differently on open-domain question answering?",
+      "relevant_chunk_indices": [
+        39
+      ],
+      "retriever": {
+        "first_relevant_rank": 2,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 0.5,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 27,
+            "retrieval_score": 0.722770183468751,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 39,
+            "retrieval_score": 0.6990756350309976,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 25,
+            "retrieval_score": 0.686618724768051,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 18,
+            "retrieval_score": 0.6806865117116153,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 35,
+            "retrieval_score": 0.6548970194106549,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 83,
+            "retrieval_score": 0.6482338615063129,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 29,
+            "retrieval_score": 0.647926451166404,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 19,
+            "retrieval_score": 0.6433311360140284,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 13,
+            "retrieval_score": 0.6383420191514174,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 12,
+            "retrieval_score": 0.6364188427831313,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 39,
+            "retrieval_score": 0.6990756350309976,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 27,
+            "retrieval_score": 0.722770183468751,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 18,
+            "retrieval_score": 0.6806865117116153,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 29,
+            "retrieval_score": 0.647926451166404,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 35,
+            "retrieval_score": 0.6548970194106549,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 19,
+            "retrieval_score": 0.6433311360140284,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 13,
+            "retrieval_score": 0.6383420191514174,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 12,
+            "retrieval_score": 0.6364188427831313,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 25,
+            "retrieval_score": 0.686618724768051,
+            "rerank_score": 0.05,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 83,
+            "retrieval_score": 0.6482338615063129,
+            "rerank_score": 0.05,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_008",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "How can RAG update its world knowledge at test time without additional model training?",
+      "relevant_chunk_indices": [
+        9,
+        36,
+        38,
+        39
+      ],
+      "retriever": {
+        "first_relevant_rank": 3,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 0.3333333333333333,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 19,
+            "retrieval_score": 0.6172461955574555,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_index": 18,
+            "retrieval_score": 0.6069970058178414,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_index": 9,
+            "retrieval_score": 0.5855145390111224,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_index": 39,
+            "retrieval_score": 0.5837668082808578,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_index": 38,
+            "retrieval_score": 0.5814026326419349,
+            "is_relevant": true
+          },
+          {
+            "rank": 6,
+            "chunk_index": 36,
+            "retrieval_score": 0.5803762966165914,
+            "is_relevant": true
+          },
+          {
+            "rank": 7,
+            "chunk_index": 1,
+            "retrieval_score": 0.5719949701346262,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 24,
+            "retrieval_score": 0.5664533939427119,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 25,
+            "retrieval_score": 0.5648353424549015,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 29,
+            "retrieval_score": 0.5642396022696998,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 36,
+            "retrieval_score": 0.5803762966165914,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 39,
+            "retrieval_score": 0.5837668082808578,
+            "rerank_score": 0.98,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 38,
+            "retrieval_score": 0.5814026326419349,
+            "rerank_score": 0.95,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_index": 9,
+            "retrieval_score": 0.5855145390111224,
+            "rerank_score": 0.85,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_index": 1,
+            "retrieval_score": 0.5719949701346262,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 25,
+            "retrieval_score": 0.5648353424549015,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 18,
+            "retrieval_score": 0.6069970058178414,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 24,
+            "retrieval_score": 0.5664533939427119,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 29,
+            "retrieval_score": 0.5642396022696998,
+            "rerank_score": 0.25,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 19,
+            "retrieval_score": 0.6172461955574555,
+            "rerank_score": 0.15,
+            "is_relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "explanation_009",
+      "category": "explanation",
+      "query_style": "paraphrase",
+      "question": "What broader goal does RAG pursue by adding learned retrieval to a pretrained generative language model?",
+      "relevant_chunk_indices": [
+        1,
+        6,
+        45
+      ],
+      "retriever": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 1,
+            "retrieval_score": 0.6876415497857885,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 45,
+            "retrieval_score": 0.6688920555126661,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 48,
+            "retrieval_score": 0.6674112837103304,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 35,
+            "retrieval_score": 0.6290374730966193,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 9,
+            "retrieval_score": 0.6045683026577788,
+            "is_relevant": false
+          },
+          {
+            "rank": 6,
+            "chunk_index": 6,
+            "retrieval_score": 0.6044280681933775,
+            "is_relevant": true
+          },
+          {
+            "rank": 7,
+            "chunk_index": 7,
+            "retrieval_score": 0.5939171336442515,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 2,
+            "retrieval_score": 0.5802483326220623,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 10,
+            "retrieval_score": 0.5790125600911147,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 13,
+            "retrieval_score": 0.5780848127244478,
+            "is_relevant": false
+          }
+        ]
+      },
+      "reranker": {
+        "first_relevant_rank": 1,
+        "hit_at_3": 1.0,
+        "reciprocal_rank": 1.0,
+        "candidates": [
+          {
+            "rank": 1,
+            "chunk_index": 45,
+            "retrieval_score": 0.6688920555126661,
+            "rerank_score": 1.0,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_index": 6,
+            "retrieval_score": 0.6044280681933775,
+            "rerank_score": 0.7,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_index": 7,
+            "retrieval_score": 0.5939171336442515,
+            "rerank_score": 0.6,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_index": 10,
+            "retrieval_score": 0.5790125600911147,
+            "rerank_score": 0.5,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_index": 1,
+            "retrieval_score": 0.6876415497857885,
+            "rerank_score": 0.4,
+            "is_relevant": true
+          },
+          {
+            "rank": 6,
+            "chunk_index": 2,
+            "retrieval_score": 0.5802483326220623,
+            "rerank_score": 0.4,
+            "is_relevant": false
+          },
+          {
+            "rank": 7,
+            "chunk_index": 48,
+            "retrieval_score": 0.6674112837103304,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 8,
+            "chunk_index": 9,
+            "retrieval_score": 0.6045683026577788,
+            "rerank_score": 0.3,
+            "is_relevant": false
+          },
+          {
+            "rank": 9,
+            "chunk_index": 35,
+            "retrieval_score": 0.6290374730966193,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          },
+          {
+            "rank": 10,
+            "chunk_index": 13,
+            "retrieval_score": 0.5780848127244478,
+            "rerank_score": 0.2,
+            "is_relevant": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -4,6 +4,27 @@ from collections import Counter
 from pathlib import Path
 
 
+def classify_outcome(
+    retriever_rank: int | None,
+    reranker_rank: int | None,
+    k: int = 3,
+) -> str:
+    if k <= 0:
+        raise ValueError("k must be greater than 0")
+
+    if retriever_rank is None:
+        return "retrieval_failure"
+
+    if reranker_rank is not None and reranker_rank <= k:
+        return "reranker_recovered" if retriever_rank > k else "success"
+
+    return (
+        "reranker_regression"
+        if retriever_rank <= k
+        else "unresolved_ranking_failure"
+    )
+
+
 def classify_case(case: dict) -> list[str]:
     failure_types = []
 
@@ -13,8 +34,6 @@ def classify_case(case: dict) -> list[str]:
     # Retriever Top 10 안에 정답이 없음
     if retriever_rank is None:
         failure_types.append("retrieval_failure")
-
-    # 정답은 Top 10에 있지만 답변에 사용하는 Top 3 밖에 있음
     elif retriever_rank > 3:
         failure_types.append("retriever_top3_miss")
 
@@ -67,31 +86,35 @@ def main():
     if not result_path.exists():
         raise SystemExit(f"Result file not found: {result_path}")
 
-    report = json.loads(
-        result_path.read_text(encoding="utf-8")
-    )
+    report = json.loads(result_path.read_text(encoding="utf-8"))
 
     analyzed_cases = []
     failure_counter = Counter()
+    outcome_counter = Counter()
 
     for case in report["cases"]:
         failure_types = classify_case(case)
+        outcome = classify_outcome(
+            case["retriever"]["first_relevant_rank"],
+            case["reranker"]["first_relevant_rank"],
+        )
 
         analyzed_case = {
             **case,
+            "outcome": outcome,
             "failure_types": failure_types,
         }
 
         analyzed_cases.append(analyzed_case)
         failure_counter.update(failure_types)
+        outcome_counter.update([outcome])
 
     analyzed_report = {
         **report,
         "failure_summary": dict(failure_counter),
+        "outcome_summary": dict(outcome_counter),
         "cases_without_flags": sum(
-            1
-            for case in analyzed_cases
-            if not case["failure_types"]
+            1 for case in analyzed_cases if not case["failure_types"]
         ),
         "cases": analyzed_cases,
     }
@@ -101,16 +124,15 @@ def main():
     )
 
     analysis_path.write_text(
-        json.dumps(
-            analyzed_report,
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(analyzed_report, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
-    print("\n--- Failure Summary ---")
+    print("\n--- Outcome Summary ---")
+    for outcome, count in outcome_counter.items():
+        print(f"{outcome}: {count}")
 
+    print("\n--- Failure Summary ---")
     if failure_counter:
         for failure_type, count in failure_counter.items():
             print(f"{failure_type}: {count}")
@@ -121,7 +143,6 @@ def main():
         "cases_without_flags: "
         f'{analyzed_report["cases_without_flags"]}'
     )
-
     print(f"\nAnalysis saved to: {analysis_path}")
 
 

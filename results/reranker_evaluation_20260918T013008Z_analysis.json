@@ -161,6 +161,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -315,6 +316,7 @@
           }
         ]
       },
+      "outcome": "reranker_recovered",
       "failure_types": [
         "retriever_top3_miss"
       ]
@@ -471,6 +473,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -625,6 +628,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -781,6 +785,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": [
         "irrelevant_top_score"
       ]
@@ -937,6 +942,7 @@
           }
         ]
       },
+      "outcome": "reranker_recovered",
       "failure_types": [
         "retriever_top3_miss"
       ]
@@ -1094,6 +1100,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": [
         "irrelevant_top_score"
       ]
@@ -1250,6 +1257,7 @@
           }
         ]
       },
+      "outcome": "reranker_recovered",
       "failure_types": [
         "retriever_top3_miss"
       ]
@@ -1406,6 +1414,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -1560,6 +1569,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -1714,6 +1724,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": [
         "irrelevant_top_score"
       ]
@@ -1870,6 +1881,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": [
         "irrelevant_top_score"
       ]
@@ -2026,6 +2038,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -2183,6 +2196,7 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     },
     {
@@ -2339,12 +2353,17 @@
           }
         ]
       },
+      "outcome": "success",
       "failure_types": []
     }
   ],
   "failure_summary": {
     "retriever_top3_miss": 3,
     "irrelevant_top_score": 4
+  },
+  "outcome_summary": {
+    "success": 12,
+    "reranker_recovered": 3
   },
   "cases_without_flags": 8
 }

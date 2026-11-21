@@ -140,3 +140,21 @@ def test_search_chunks_by_embedding_returns_most_similar_chunk():
     assert results[0]["chunk_index"] == 0
     assert results[0]["score"] == pytest.approx(1.0)
     assert results[0]["page_numbers"] == [1]
+
+def test_search_chunks_preserves_document_id():
+    chunks = [
+        {
+            "document_id": "pdf_abc123",
+            "chunk_index": 0,
+            "page_numbers": [1],
+            "text": "python machine learning",
+        }
+    ]
+
+    results = search_chunks(
+        query="python machine learning",
+        chunks=chunks,
+        top_k=1,
+    )
+
+    assert results[0]["document_id"] == "pdf_abc123"

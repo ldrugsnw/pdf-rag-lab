@@ -23,14 +23,17 @@ def search_chunks(query: str, chunks: list[dict], top_k: int = 3) -> list[dict]:
         score = calculate_keyword_score(query, chunk["text"])
 
         if score > 0:
-            results.append(
-                {
-                    "score": score,
-                    "chunk_index": chunk["chunk_index"],
-                    "page_numbers": chunk["page_numbers"],
-                    "text": chunk["text"],
-                }
-            )
+            result = {
+                "score": score,
+                "chunk_index": chunk["chunk_index"],
+                "page_numbers": chunk["page_numbers"],
+                "text": chunk["text"],
+            }
+            
+            if "document_id" in chunk:
+                result["document_id"] = chunk["document_id"]
+
+            results.append(result)
 
     results.sort(
         key=lambda result: result["score"],
@@ -74,14 +77,19 @@ def search_chunks_by_embedding(
             chunk["embedding"],
         )
 
-        results.append(
-            {
+        result = {
             "score": score,
             "chunk_index": chunk["chunk_index"],
             "page_numbers": chunk["page_numbers"],
             "text": chunk["text"],
-            }
-        )
+        }
+
+        
+
+        if "document_id" in chunk:
+            result["document_id"] = chunk["document_id"]
+
+        results.append(result)
 
     results.sort(
         key=lambda result: result["score"],

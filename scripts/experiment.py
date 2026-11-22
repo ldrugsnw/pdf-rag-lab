@@ -102,6 +102,10 @@ for case, query_embedding in zip(
         top_k=len(embedded_chunks),
     )
 
+    if "Which model does RAG use" in case["query"]:
+        for rank, result in enumerate(results[:8], start=1):
+            print(rank, result)
+
     hit_at_3 = calculate_hit_at_k(
         results=results,
         relevant_chunk_indices=case["relevant_chunk_indices"],

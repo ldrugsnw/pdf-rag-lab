@@ -459,6 +459,34 @@ prompt뿐 아니라 validation, retry, fallback과 관찰 가능한 실행 기�
 
 현재 전체 회귀 테스트는 **42 passed**입니다.
 
+Generation Evaluation — Faithfulness & Answer Correctness (2026.11.22)
+
+Retriever와 Reranker 평가 이후, 최종 생성 답변의 품질을 측정하기 위해 GPT-5-nano 기반 LLM-as-a-Judge를 구현했습니다.
+
+구현한 평가 지표
+
+* Faithfulness: 생성된 답변을 Claim 단위로 분해하고, 각 주장이 검색된 Context에 의해 뒷받침되는지 평가합니다.
+* Answer Correctness: 생성된 답변이 기준 정답의 핵심 정보를 올바르게 전달하는지 평가합니다. 의미적으로 동일한 표현을 인정하며, 핵심 답변과 무관한 부가 정보의 오류는 별도로 취급합니다.
+
+각 Claim에 대해 Supported 여부와 판정 이유를 기록하고, Supported Claim의 비율로 Faithfulness 점수를 계산합니다.
+
+실험 결과
+
+대표 질문인 RAG의 retrieval model을 묻는 사례에서 Faithfulness 1.0, Answer Correctness 1을 기록했습니다. 다만 이는 단일 실행 결과이며 전체 시스템의 평균 성능을 의미하지 않습니다.
+
+동일한 Context와 Answer를 5번 반복 평가한 결과, 통합형 Judge의 Faithfulness 점수는 [1.0, 1.0, 0.5, 1.0, 1.0]으로 달라졌습니다.
+
+이를 분석하기 위해 Claim Extraction과 Verification을 분리하고 고정된 Claim 목록으로 다시 평가했습니다. 분리형 Judge에서도 [0.3333, 0.3333, 0.6667, 0.3333, 0.3333]의 점수 변동이 관찰되었습니다.
+
+배운 점과 한계
+
+* 사실적으로 올바른 답변이라도 검색된 Context에 근거가 없으면 Faithfulness가 낮을 수 있습니다.
+* LLM Judge는 동일한 입력에 대해 다른 Claim이나 판정을 생성할 수 있습니다.
+* Claim Extraction과 Verification을 분리하면 불안정성의 원인을 구분하기 쉬워집니다.
+* 평가 점수의 일관성과 평가 판정의 정확성은 별도로 검증해야 합니다.
+
+이번 프로젝트에서는 LLM Judge의 한계를 확인하는 수준에서 실험을 마무리했습니다. Judge의 추가 개선과 대규모 평가 데이터셋 구축은 후속 연구 주제로 남겨 둡니다.
+
 ## 학습 원칙
 
 1. 전체 기능을 한꺼번에 구현하지 않습니다.

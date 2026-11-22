@@ -6,20 +6,21 @@ from app.chunker import chunk_pages
 from app.parser import extract_pages
 from app.embedder import embed_chunks, embed_texts
 from app.retrieval import search_chunks_by_embedding
+from app.document import prepare_document
 
 from app.evaluation import (
     calculate_hit_at_k,
     calculate_reciprocal_rank,
+    calculate_recall_at_k,
 )
 
 PDF_PATH = Path("samples/rag_paper.pdf")
-CACHE_PATH = Path("cache/rag_paper_embeddings.json")
+CACHE_PATH = Path("cache/rag_paper_embeddings_v2.json")
 
 pdf_bytes = PDF_PATH.read_bytes()
-pages = extract_pages(pdf_bytes)
-chunks = chunk_pages(pages)
 
-print("pages:", len(pages))
+chunks = prepare_document(pdf_bytes)
+
 print("chunks:", len(chunks))
 
 """
@@ -89,6 +90,7 @@ query_embeddings = embed_texts(queries)
 
 hit_scores = []
 reciprocal_ranks = []
+recall_scores = []
 
 for case, query_embedding in zip(
     evaluation_cases,
@@ -111,9 +113,16 @@ for case, query_embedding in zip(
         relevant_chunk_indices=case["relevant_chunk_indices"],
     )
 
+    recall_at_3 = calculate_recall_at_k(
+        results=results,
+        relevant_chunk_indices=case["relevant_chunk_indices"],
+        k=3,
+    )
+
     hit_scores.append(hit_at_3)
     reciprocal_ranks.append(reciprocal_rank)
-
+    recall_scores.append(recall_at_3)
+    
     if reciprocal_rank > 0:
         first_relevant_rank = round(1 / reciprocal_rank)
     else:
@@ -124,11 +133,14 @@ for case, query_embedding in zip(
     print("first relevant rank:", first_relevant_rank)
     print("Hit@3:", hit_at_3)
     print("RR:", round(reciprocal_rank, 4))
+    print("Recall@3:", round(recall_at_3, 4))
 
 
 mean_hit_at_3 = sum(hit_scores) / len(hit_scores)
 mrr = sum(reciprocal_ranks) / len(reciprocal_ranks)
+mean_recall_at_3 = sum(recall_scores) / len(recall_scores)
 
 print("\n--- Evaluation Summary ---")
 print("Mean Hit@3:", round(mean_hit_at_3, 4))
 print("MRR:", round(mrr, 4))
+print("Mean Recall@3", round(mean_recall_at_3, 4))

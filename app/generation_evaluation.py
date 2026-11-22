@@ -6,6 +6,12 @@ client = OpenAI()
 class ClaimVerdict(BaseModel):
     claim: str
     supported: bool
+    reason: str
+
+class CorrectnessResult(BaseModel):
+    correct: bool
+    reason: str
+
 
 
 class FaithfulnessResult(BaseModel):
@@ -47,6 +53,11 @@ Rules:
   mark it as unsupported.
 - Do not treat the absence of evidence as proof
   that a claim is factually false.
+- For each claim, provide a brief reason explaining
+  why it is supported or unsupported.
+- When supported, cite the relevant evidence from
+  the provided context in your reason.
+- When unsupported, explain what evidence is missing.
 
 Context:
 {context}
@@ -98,3 +109,62 @@ def calculate_answer_faithfulness(
     )
 
     return score
+
+
+def build_correctness_prompt(
+    question: str,
+    reference_answer: str,
+    generated_answer: str,
+) -> str:
+    return f"""
+You are an answer correctness evaluator for a RAG system.
+
+Evaluate whether the generated answer correctly answers the question
+based on the reference answer.
+
+Rules:
+- Evaluate whether the generated answer provides the
+  essential information required by the question.
+- Accept paraphrases and equivalent terminology.
+- Mark the answer as correct if the core answer is correct.
+- Do not penalize unrelated additional factual errors
+  unless they contradict or undermine the core answer.
+- Mark the answer as incorrect if essential information
+  is missing, wrong, or contradicted.
+- Explain your decision briefly.
+
+Question:
+{question}
+
+Reference Answer:
+{reference_answer}
+
+Generated Answer:
+{generated_answer}
+"""
+
+
+
+def evaluate_correctness(
+    question: str,
+    reference_answer: str,
+    generated_answer: str,
+) -> CorrectnessResult:
+    prompt = build_correctness_prompt(
+        question=question,
+        reference_answer=reference_answer,
+        generated_answer=generated_answer,
+    )
+
+    response = client.responses.parse(
+        model="gpt-5-nano",
+        input=prompt,
+        text_format=CorrectnessResult,
+    )
+
+    if response.output_parsed is None:
+        raise ValueError(
+            "Correctness Judge returned no parsed result"
+        )
+
+    return response.output_parsed
